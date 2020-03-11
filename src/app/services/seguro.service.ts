@@ -11,7 +11,7 @@ import Dexie from 'dexie';
 })
 export class SeguroService {
 
-  private API_SEGUROS = 'http://localhost:9001/api/seguros';
+  private API_SEGUROS = 'http://localhost:3000/seguro';
   private db: Dexie;
   private table: Dexie.Table<Seguro, any> = null;
 

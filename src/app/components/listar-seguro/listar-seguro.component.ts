@@ -2,6 +2,7 @@ import { SeguroService } from './../../services/seguro.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Seguro } from 'src/app/models/seguro';
+import { DataSource } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-listar-seguro',
@@ -10,14 +11,24 @@ import { Seguro } from 'src/app/models/seguro';
 })
 export class ListarSeguroComponent implements OnInit {
 
-  public seguros$: Observable<Seguro[]>;
+  dataSource = new SeguroDataSource(this.seguroService);
+  //dataSource: Observable<Seguro[]>;
+  displayedColumns: string[] = ['id', 'marcaCarro', 'nomeProprietario'];
 
   constructor(private seguroService: SeguroService) { }
 
   ngOnInit(): void {
-    this.seguros$ = this.seguroService.listar();
+    //this.dataSource = this.seguroService.listar();
   }
 
+}
 
-
+export class SeguroDataSource extends DataSource<Seguro> {
+  constructor(private seguroService: SeguroService) {
+    super();
+  }
+  connect(): Observable<Seguro[]> {
+    return this.seguroService.listar();
+  }
+  disconnect() { }
 }

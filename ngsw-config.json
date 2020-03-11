@@ -31,12 +31,12 @@
       "name": "car-api",
       "urls": [
         "https://www.carqueryapi.com/api/0.3/",
-        "http://localhost:9001/api/seguros/"
+        "http://localhost:3000/seguro"
       ],
       "cacheConfig": {
         "strategy": "performance",
         "maxSize": 10000,
-        "maxAge": "10h",
+        "maxAge": "10d",
         "timeout": "5s"
       }
     }

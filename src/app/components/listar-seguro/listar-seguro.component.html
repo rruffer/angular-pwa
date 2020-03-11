@@ -4,18 +4,24 @@
   </div>
   <div class="content">
 
-    <ng-container *ngIf="seguros$ | async as seguros; else carregando">
-      <ng-container *ngIf="seguros.length > 0; else semSeguros">
-        <div *ngFor="let seguro of seguros" class="claim-row">
-          <div>
-            <strong>Marca e Modelo: </strong>{{ seguro.marcaCarro }} - {{ seguro.modeloCarro }}
-          </div>
-          <div>
-            <strong>Proprietário: </strong>{{ seguro.nomeProprietario }} {{ seguro.sobrenomeProprietario }}
-          </div>
-        </div>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let seguro"> {{seguro.id}} </mat-cell>
       </ng-container>
-    </ng-container>
+      <ng-container matColumnDef="marcaCarro">
+        <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
+        <mat-cell *matCellDef="let seguro"> {{seguro.marcaCarro}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="nomeProprietario">
+        <mat-header-cell *matHeaderCellDef> Nome Prop. </mat-header-cell>
+        <mat-cell *matCellDef="let seguro"> {{seguro.nomeProprietario}} </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
 
     <ng-template #carregando>
       Carregando seguros...

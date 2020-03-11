@@ -1,0 +1,22 @@
+{
+  "seguro": [
+    {
+      "marcaCarro": "Alfa Romeo",
+      "modeloCarro": "dede",
+      "placaCarro": "eded",
+      "nomeProprietario": "dedede",
+      "sobreNomeProprietario": "ededed",
+      "dataNascimentoProprietario": "2020-03-20",
+      "id": "eded"
+    },
+    {
+      "marcaCarro": "Acura",
+      "modeloCarro": "audi",
+      "placaCarro": "SDA1214",
+      "nomeProprietario": "Rodolfo",
+      "sobreNomeProprietario": "Ruffer",
+      "dataNascimentoProprietario": "2020-03-25",
+      "id": "SDA1214"
+    }
+  ]
+}
