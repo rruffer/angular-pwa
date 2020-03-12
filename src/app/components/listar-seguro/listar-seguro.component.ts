@@ -14,7 +14,7 @@ export class ListarSeguroComponent implements OnInit {
   f_firstPanel = true;
   dataSource = new SeguroDataSource(this.seguroService);
   //dataSource: Observable<Seguro[]>;
-  displayedColumns: string[] = ['id', 'marcaCarro', 'nomeProprietario'];
+  displayedColumns: string[] = ['id', 'marcaCarro', 'nomeProprietario', 'opcoes'];
 
   constructor(private seguroService: SeguroService) { }
 

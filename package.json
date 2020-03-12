@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "api": "json-server json/seguros.json --watch --port 3000",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "start:dev": "run-p api start",
-    "build": "ng build",
+    "start:prod": "run-s api build:prod pwa",
+    "build:dev": "ng build",
+    "build:prod": "ng build --prod",
+    "pwa": "http-server dist/curso-pwa-angular",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
