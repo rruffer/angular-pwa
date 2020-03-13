@@ -12,6 +12,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { CadastroSeguroComponent } from './components/cadastro-seguro/cadastro-seguro.component';
 import { ListarSeguroComponent } from './components/listar-seguro/listar-seguro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { routerAnimate } from './common/router-animation';
 
 @NgModule({
   declarations: [

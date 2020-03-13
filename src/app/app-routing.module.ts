@@ -6,8 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: 'cadastro', pathMatch: 'full'},
-  {path: 'cadastro', component: CadastroSeguroComponent},
-  {path: 'listar', component: ListarSeguroComponent},
+  {path: 'cadastro', component: CadastroSeguroComponent, data: {num: 1}},
+  {path: 'listar', component: ListarSeguroComponent, data: {num: 2}},
 ];
 
 @NgModule({
